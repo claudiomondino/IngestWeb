@@ -18,13 +18,14 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Nome applicazione", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("IngestWEB - Gestione cartelle cliniche", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Chi siamo", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contatti", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Ospiti", "Index", "anagrafica_ospiti")</li>
+                    <li>@Html.ActionLink("Medici", "Index", "anagrafica_medici")</li>
+                    <li>@Html.ActionLink("Nuclei", "Index", "nucleis")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

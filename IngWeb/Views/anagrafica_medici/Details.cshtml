@@ -1,0 +1,178 @@
+﻿@model IngWeb.Models.anagrafica_medici
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>anagrafica_medici</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.uid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.uid)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cognome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cognome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.data_nascita)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.data_nascita)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.comune_nascita)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.comune_nascita)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.provincia_nascita)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.provincia_nascita)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cap_nascita)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cap_nascita)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.codice_fiscale)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.codice_fiscale)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.indirizzo_ufficio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.indirizzo_ufficio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.localita_ufficio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.localita_ufficio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.provincia_ufficio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.provincia_ufficio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cap_ufficicio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cap_ufficicio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.telefono)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.telefono)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cellulare)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cellulare)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.id_regionale)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.id_regionale)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.indirizzo_mail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.indirizzo_mail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.attivo_sn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.attivo_sn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.user_id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.user_id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cpccchk)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cpccchk)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.enabled)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.enabled)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

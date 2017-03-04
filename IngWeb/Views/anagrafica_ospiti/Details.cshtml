@@ -1,0 +1,538 @@
+﻿@model IngWeb.Models.anagrafica_ospiti
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>anagrafica_ospiti</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.uid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.uid)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.codice_interno)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.codice_interno)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cognome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cognome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.data_nascita)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.data_nascita)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.comune_nascita)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.comune_nascita)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.provincia_nascita)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.provincia_nascita)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cap_nascita)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cap_nascita)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.codice_fiscale)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.codice_fiscale)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.provenienza)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.provenienza)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.titolo_studio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.titolo_studio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.professione)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.professione)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.stato_civile)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.stato_civile)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nome_coniuge)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nome_coniuge)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cognome_coniuge)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cognome_coniuge)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.libretto_sanitario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.libretto_sanitario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.numero_esenzione_ticket)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.numero_esenzione_ticket)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.grado_invalidita)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.grado_invalidita)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.indennita_accompagnamento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.indennita_accompagnamento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pensioni_rendite)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pensioni_rendite)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.codice_medico_curante)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.codice_medico_curante)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nucleo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nucleo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.data_ingresso)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.data_ingresso)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.data_uscita)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.data_uscita)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.motivo_uscita)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.motivo_uscita)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.indirizzo_residenza)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.indirizzo_residenza)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.localita_residenza)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.localita_residenza)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.provincia_residenza)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.provincia_residenza)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cap_residenza)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cap_residenza)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.indirizzo_domicilio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.indirizzo_domicilio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.localita_domicilio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.localita_domicilio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.provincia_domicilio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.provincia_domicilio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cap_domicilio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cap_domicilio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nome_cognome_emergenza)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nome_cognome_emergenza)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.telefono_emergenza)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.telefono_emergenza)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nome_parente1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nome_parente1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cognome_parente1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cognome_parente1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.rapporto_parente1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.rapporto_parente1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.telefono_parente1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.telefono_parente1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.indirizzo_parente1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.indirizzo_parente1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.localita_parente1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.localita_parente1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.provincia_parente1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.provincia_parente1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.note_parente1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.note_parente1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nome_parente2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nome_parente2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cognome_parente2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cognome_parente2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.rapporto_parente2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.rapporto_parente2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.telefono_parente2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.telefono_parente2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.indirizzo_parente2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.indirizzo_parente2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.localita_parente2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.localita_parente2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.provincia_parente2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.provincia_parente2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.note_parente2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.note_parente2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nome_parente3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nome_parente3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cognome_parente3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cognome_parente3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.rapporto_parente3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.rapporto_parente3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.telefono_parente3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.telefono_parente3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.indirizzo_parente3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.indirizzo_parente3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.localita_parente3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.localita_parente3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.provincia_parente3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.provincia_parente3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.note_parente3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.note_parente3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.residenza_sanitaria_assistenziale)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.residenza_sanitaria_assistenziale)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.residenza_assistenziale)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.residenza_assistenziale)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.residenza_assistenziale_alberghiera)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.residenza_assistenziale_alberghiera)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nome_cognome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nome_cognome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cpccchk)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cpccchk)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.enabled)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.enabled)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

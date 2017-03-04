@@ -1,0 +1,660 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="IngestDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="anagrafica_medici">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="uid" Type="varchar" MaxLength="36" Nullable="false" />
+          <Property Name="cognome" Type="varchar" MaxLength="40" />
+          <Property Name="nome" Type="varchar" MaxLength="40" />
+          <Property Name="data_nascita" Type="date" />
+          <Property Name="comune_nascita" Type="varchar" MaxLength="10" />
+          <Property Name="provincia_nascita" Type="varchar" MaxLength="5" />
+          <Property Name="cap_nascita" Type="varchar" MaxLength="5" />
+          <Property Name="codice_fiscale" Type="varchar" MaxLength="16" />
+          <Property Name="indirizzo_ufficio" Type="varchar" MaxLength="100" />
+          <Property Name="localita_ufficio" Type="varchar" MaxLength="10" />
+          <Property Name="provincia_ufficio" Type="varchar" MaxLength="5" />
+          <Property Name="cap_ufficicio" Type="varchar" MaxLength="5" />
+          <Property Name="telefono" Type="varchar" MaxLength="10" />
+          <Property Name="cellulare" Type="varchar" MaxLength="10" />
+          <Property Name="id_regionale" Type="varchar" MaxLength="20" />
+          <Property Name="indirizzo_mail" Type="varchar" MaxLength="50" />
+          <Property Name="attivo_sn" Type="varchar" MaxLength="1" />
+          <Property Name="user_id" Type="int" />
+          <Property Name="cpccchk" Type="varchar" MaxLength="10" />
+          <Property Name="enabled" Type="nchar" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="anagrafica_ospiti">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="uid" Type="varchar" MaxLength="36" Nullable="false" />
+          <Property Name="codice_interno" Type="varchar" MaxLength="5" />
+          <Property Name="cognome" Type="varchar" MaxLength="40" />
+          <Property Name="nome" Type="varchar" MaxLength="40" />
+          <Property Name="data_nascita" Type="date" />
+          <Property Name="comune_nascita" Type="varchar" MaxLength="40" />
+          <Property Name="provincia_nascita" Type="varchar" MaxLength="2" />
+          <Property Name="cap_nascita" Type="varchar" MaxLength="5" />
+          <Property Name="codice_fiscale" Type="varchar" MaxLength="16" />
+          <Property Name="provenienza" Type="varchar" MaxLength="50" />
+          <Property Name="titolo_studio" Type="varchar" MaxLength="50" />
+          <Property Name="professione" Type="varchar" MaxLength="50" />
+          <Property Name="stato_civile" Type="varchar" MaxLength="40" />
+          <Property Name="nome_coniuge" Type="varchar" MaxLength="40" />
+          <Property Name="cognome_coniuge" Type="varchar" MaxLength="40" />
+          <Property Name="libretto_sanitario" Type="varchar" MaxLength="40" />
+          <Property Name="numero_esenzione_ticket" Type="varchar" MaxLength="40" />
+          <Property Name="grado_invalidita" Type="varchar" MaxLength="10" />
+          <Property Name="indennita_accompagnamento" Type="varchar" MaxLength="30" />
+          <Property Name="pensioni_rendite" Type="varchar" MaxLength="20" />
+          <Property Name="codice_medico_curante" Type="varchar" MaxLength="36" />
+          <Property Name="nucleo" Type="varchar" MaxLength="10" />
+          <Property Name="data_ingresso" Type="date" />
+          <Property Name="data_uscita" Type="date" />
+          <Property Name="motivo_uscita" Type="varchar" MaxLength="50" />
+          <Property Name="indirizzo_residenza" Type="varchar" MaxLength="40" />
+          <Property Name="localita_residenza" Type="varchar" MaxLength="10" />
+          <Property Name="provincia_residenza" Type="varchar" MaxLength="5" />
+          <Property Name="cap_residenza" Type="varchar" MaxLength="5" />
+          <Property Name="indirizzo_domicilio" Type="varchar" MaxLength="40" />
+          <Property Name="localita_domicilio" Type="varchar" MaxLength="10" />
+          <Property Name="provincia_domicilio" Type="varchar" MaxLength="5" />
+          <Property Name="cap_domicilio" Type="varchar" MaxLength="5" />
+          <Property Name="nome_cognome_emergenza" Type="varchar" MaxLength="80" />
+          <Property Name="telefono_emergenza" Type="varchar" MaxLength="10" />
+          <Property Name="nome_parente1" Type="varchar" MaxLength="20" />
+          <Property Name="cognome_parente1" Type="varchar" MaxLength="20" />
+          <Property Name="rapporto_parente1" Type="varchar" MaxLength="3" />
+          <Property Name="telefono_parente1" Type="varchar" MaxLength="10" />
+          <Property Name="indirizzo_parente1" Type="varchar" MaxLength="40" />
+          <Property Name="localita_parente1" Type="varchar" MaxLength="10" />
+          <Property Name="provincia_parente1" Type="varchar" MaxLength="5" />
+          <Property Name="note_parente1" Type="varchar" MaxLength="100" />
+          <Property Name="nome_parente2" Type="varchar" MaxLength="20" />
+          <Property Name="cognome_parente2" Type="varchar" MaxLength="20" />
+          <Property Name="rapporto_parente2" Type="varchar" MaxLength="3" />
+          <Property Name="telefono_parente2" Type="varchar" MaxLength="10" />
+          <Property Name="indirizzo_parente2" Type="varchar" MaxLength="40" />
+          <Property Name="localita_parente2" Type="varchar" MaxLength="10" />
+          <Property Name="provincia_parente2" Type="varchar" MaxLength="5" />
+          <Property Name="note_parente2" Type="varchar" MaxLength="100" />
+          <Property Name="nome_parente3" Type="varchar" MaxLength="20" />
+          <Property Name="cognome_parente3" Type="varchar" MaxLength="20" />
+          <Property Name="rapporto_parente3" Type="varchar" MaxLength="3" />
+          <Property Name="telefono_parente3" Type="varchar" MaxLength="10" />
+          <Property Name="indirizzo_parente3" Type="varchar" MaxLength="40" />
+          <Property Name="localita_parente3" Type="varchar" MaxLength="10" />
+          <Property Name="provincia_parente3" Type="varchar" MaxLength="5" />
+          <Property Name="note_parente3" Type="varchar" MaxLength="100" />
+          <Property Name="residenza_sanitaria_assistenziale" Type="varchar" MaxLength="1" />
+          <Property Name="residenza_assistenziale" Type="varchar" MaxLength="1" />
+          <Property Name="residenza_assistenziale_alberghiera" Type="varchar" MaxLength="1" />
+          <Property Name="nome_cognome" Type="varchar" MaxLength="80" />
+          <Property Name="cpccchk" Type="varchar" MaxLength="10" />
+          <Property Name="enabled" Type="nchar" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="comuni">
+          <Key>
+            <PropertyRef Name="nome_comun" />
+            <PropertyRef Name="provincia" />
+          </Key>
+          <Property Name="nome_comun" Type="varchar" MaxLength="41" Nullable="false" />
+          <Property Name="provincia" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="cap" Type="int" />
+          <Property Name="nazione" Type="varchar" MaxLength="3" />
+          <Property Name="codcatasto" Type="varchar" MaxLength="10" />
+          <Property Name="cpccchk" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="diari">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="numeric" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="oggetto" Type="varchar" MaxLength="50" />
+          <Property Name="descrizione" Type="varchar" MaxLength="500" />
+          <Property Name="tipo_diario" Type="varchar" MaxLength="5" />
+          <Property Name="data_ora" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+          <Property Name="ospite" Type="varchar" MaxLength="36" />
+          <Property Name="id_user_inserimento" Type="int" />
+          <Property Name="firmato" Type="varchar" MaxLength="1" />
+          <Property Name="cpccchk" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="dieta">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="numeric" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="oggetto" Type="varchar" MaxLength="40" />
+          <Property Name="descrizione" Type="varchar" MaxLength="250" />
+          <Property Name="data_ora" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+          <Property Name="ospite" Type="varchar" MaxLength="36" />
+          <Property Name="id_user_inserimento" Type="int" />
+          <Property Name="firmato" Type="varchar" MaxLength="1" />
+          <Property Name="cpccchk" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="nuclei">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="descrizione" Type="varchar" MaxLength="40" />
+          <Property Name="nucleo_padre" Type="varchar" MaxLength="10" />
+          <Property Name="enabled" Type="varchar" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="personale_collaboratori">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="varchar" MaxLength="36" Nullable="false" />
+          <Property Name="cognome" Type="varchar" MaxLength="40" />
+          <Property Name="nome" Type="varchar" MaxLength="40" />
+          <Property Name="data_nasci" Type="date" />
+          <Property Name="comune_nascita" Type="varchar" MaxLength="10" />
+          <Property Name="provincia_nascita" Type="varchar" MaxLength="5" />
+          <Property Name="cap_nascita" Type="varchar" MaxLength="5" />
+          <Property Name="codice_fiscale" Type="varchar" MaxLength="16" />
+          <Property Name="mansione" Type="varchar" MaxLength="50" />
+          <Property Name="tipo_collaborazione" Type="varchar" MaxLength="50" />
+          <Property Name="indirizzo_residenza" Type="varchar" MaxLength="40" />
+          <Property Name="localita_residenza" Type="varchar" MaxLength="10" />
+          <Property Name="provincia_residenza" Type="varchar" MaxLength="5" />
+          <Property Name="cap_residenza" Type="varchar" MaxLength="5" />
+          <Property Name="data_inizio_rapporto" Type="date" />
+          <Property Name="data_fine_rapporto" Type="date" />
+          <Property Name="user_id" Type="int" />
+          <Property Name="cpccchk" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="province">
+          <Key>
+            <PropertyRef Name="codice" />
+          </Key>
+          <Property Name="codice" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="descrizion" Type="varchar" MaxLength="21" />
+          <Property Name="cpccchk" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="regioni">
+          <Key>
+            <PropertyRef Name="codice" />
+          </Key>
+          <Property Name="nazione" Type="varchar" MaxLength="3" />
+          <Property Name="codice" Type="varchar" MaxLength="3" Nullable="false" />
+          <Property Name="descrizion" Type="varchar" MaxLength="21" />
+          <Property Name="codf24" Type="numeric" Precision="5" Scale="2" />
+          <Property Name="cpccchk" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="settings">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="valore" Type="varchar" MaxLength="50" />
+          <Property Name="cpccchk" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityContainer Name="IngestDBModelStoreContainer">
+          <EntitySet Name="anagrafica_medici" EntityType="Self.anagrafica_medici" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="anagrafica_ospiti" EntityType="Self.anagrafica_ospiti" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="comuni" EntityType="Self.comuni" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="diari" EntityType="Self.diari" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="dieta" EntityType="Self.dieta" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="nuclei" EntityType="Self.nuclei" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="personale_collaboratori" EntityType="Self.personale_collaboratori" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="province" EntityType="Self.province" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="regioni" EntityType="Self.regioni" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="settings" EntityType="Self.settings" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="IngestDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="comuni">
+          <Key>
+            <PropertyRef Name="nome_comun" />
+            <PropertyRef Name="provincia" />
+          </Key>
+          <Property Name="nome_comun" Type="String" MaxLength="41" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="provincia" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="cap" Type="Int32" />
+          <Property Name="nazione" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="codcatasto" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="cpccchk" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="diari">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Decimal" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="oggetto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="descrizione" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="tipo_diario" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="data_ora" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="ospite" Type="String" MaxLength="36" FixedLength="false" Unicode="false" />
+          <Property Name="id_user_inserimento" Type="Int32" />
+          <Property Name="firmato" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="cpccchk" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="dieta">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Decimal" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="oggetto" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="descrizione" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="data_ora" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="ospite" Type="String" MaxLength="36" FixedLength="false" Unicode="false" />
+          <Property Name="id_user_inserimento" Type="Int32" />
+          <Property Name="firmato" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="cpccchk" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="personale_collaboratori">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="String" MaxLength="36" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="cognome" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="nome" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="data_nasci" Type="DateTime" Precision="0" />
+          <Property Name="comune_nascita" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="provincia_nascita" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="cap_nascita" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="codice_fiscale" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="mansione" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="tipo_collaborazione" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="indirizzo_residenza" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="localita_residenza" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="provincia_residenza" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="cap_residenza" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="data_inizio_rapporto" Type="DateTime" Precision="0" />
+          <Property Name="data_fine_rapporto" Type="DateTime" Precision="0" />
+          <Property Name="user_id" Type="Int32" />
+          <Property Name="cpccchk" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="province">
+          <Key>
+            <PropertyRef Name="codice" />
+          </Key>
+          <Property Name="codice" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="descrizion" Type="String" MaxLength="21" FixedLength="false" Unicode="false" />
+          <Property Name="cpccchk" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="regioni">
+          <Key>
+            <PropertyRef Name="codice" />
+          </Key>
+          <Property Name="nazione" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="codice" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="descrizion" Type="String" MaxLength="21" FixedLength="false" Unicode="false" />
+          <Property Name="codf24" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="cpccchk" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="settings">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="valore" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="cpccchk" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="IngestDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="comuni" EntityType="Self.comuni" />
+          <EntitySet Name="diari" EntityType="Self.diari" />
+          <EntitySet Name="dieta" EntityType="Self.dieta" />
+          <EntitySet Name="personale_collaboratori" EntityType="Self.personale_collaboratori" />
+          <EntitySet Name="province" EntityType="Self.province" />
+          <EntitySet Name="regioni" EntityType="Self.regioni" />
+          <EntitySet Name="settings" EntityType="Self.settings" />
+          <EntitySet Name="anagrafica_ospiti" EntityType="IngestDBModel.anagrafica_ospiti" />
+          <EntitySet Name="anagrafica_medici" EntityType="IngestDBModel.anagrafica_medici" />
+          <EntitySet Name="nuclei" EntityType="IngestDBModel.nuclei" />
+        </EntityContainer>
+        <EntityType Name="anagrafica_ospiti">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="uid" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="false" />
+          <Property Name="codice_interno" Type="String" MaxLength="5" FixedLength="false" Unicode="false" >
+            <Documentation>
+              <LongDescription>Codice interno</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Name="cognome" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="nome" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="data_nascita" Type="DateTime" Precision="0" />
+          <Property Name="comune_nascita" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="provincia_nascita" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="cap_nascita" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="codice_fiscale" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="provenienza" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="titolo_studio" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="professione" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="stato_civile" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="nome_coniuge" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="cognome_coniuge" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="libretto_sanitario" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="numero_esenzione_ticket" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="grado_invalidita" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="indennita_accompagnamento" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="pensioni_rendite" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="codice_medico_curante" Type="String" MaxLength="36" FixedLength="false" Unicode="false" />
+          <Property Name="nucleo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="data_ingresso" Type="DateTime" Precision="0" />
+          <Property Name="data_uscita" Type="DateTime" Precision="0" />
+          <Property Name="motivo_uscita" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="indirizzo_residenza" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="localita_residenza" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="provincia_residenza" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="cap_residenza" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="indirizzo_domicilio" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="localita_domicilio" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="provincia_domicilio" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="cap_domicilio" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="nome_cognome_emergenza" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="telefono_emergenza" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="nome_parente1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="cognome_parente1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="rapporto_parente1" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="telefono_parente1" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="indirizzo_parente1" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="localita_parente1" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="provincia_parente1" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="note_parente1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="nome_parente2" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="cognome_parente2" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="rapporto_parente2" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="telefono_parente2" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="indirizzo_parente2" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="localita_parente2" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="provincia_parente2" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="note_parente2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="nome_parente3" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="cognome_parente3" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="rapporto_parente3" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="telefono_parente3" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="indirizzo_parente3" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="localita_parente3" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="provincia_parente3" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="note_parente3" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="residenza_sanitaria_assistenziale" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="residenza_assistenziale" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="residenza_assistenziale_alberghiera" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="nome_cognome" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="cpccchk" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="enabled" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="anagrafica_medici">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="uid" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="false" />
+          <Property Name="cognome" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="nome" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="data_nascita" Type="DateTime" Precision="0" />
+          <Property Name="comune_nascita" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="provincia_nascita" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="cap_nascita" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="codice_fiscale" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="indirizzo_ufficio" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="localita_ufficio" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="provincia_ufficio" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="cap_ufficicio" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="telefono" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="cellulare" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="id_regionale" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="indirizzo_mail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="attivo_sn" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="user_id" Type="Int32" />
+          <Property Name="cpccchk" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="enabled" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="nuclei">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="descrizione" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="nucleo_padre" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="enabled" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="IngestDBModelStoreContainer" CdmEntityContainer="IngestDBEntities">
+          <EntitySetMapping Name="comuni">
+            <EntityTypeMapping TypeName="IngestDBModel.comuni">
+              <MappingFragment StoreEntitySet="comuni">
+                <ScalarProperty Name="nome_comun" ColumnName="nome_comun" />
+                <ScalarProperty Name="provincia" ColumnName="provincia" />
+                <ScalarProperty Name="cap" ColumnName="cap" />
+                <ScalarProperty Name="nazione" ColumnName="nazione" />
+                <ScalarProperty Name="codcatasto" ColumnName="codcatasto" />
+                <ScalarProperty Name="cpccchk" ColumnName="cpccchk" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="diari">
+            <EntityTypeMapping TypeName="IngestDBModel.diari">
+              <MappingFragment StoreEntitySet="diari">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="oggetto" ColumnName="oggetto" />
+                <ScalarProperty Name="descrizione" ColumnName="descrizione" />
+                <ScalarProperty Name="tipo_diario" ColumnName="tipo_diario" />
+                <ScalarProperty Name="data_ora" ColumnName="data_ora" />
+                <ScalarProperty Name="ospite" ColumnName="ospite" />
+                <ScalarProperty Name="id_user_inserimento" ColumnName="id_user_inserimento" />
+                <ScalarProperty Name="firmato" ColumnName="firmato" />
+                <ScalarProperty Name="cpccchk" ColumnName="cpccchk" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="dieta">
+            <EntityTypeMapping TypeName="IngestDBModel.dieta">
+              <MappingFragment StoreEntitySet="dieta">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="oggetto" ColumnName="oggetto" />
+                <ScalarProperty Name="descrizione" ColumnName="descrizione" />
+                <ScalarProperty Name="data_ora" ColumnName="data_ora" />
+                <ScalarProperty Name="ospite" ColumnName="ospite" />
+                <ScalarProperty Name="id_user_inserimento" ColumnName="id_user_inserimento" />
+                <ScalarProperty Name="firmato" ColumnName="firmato" />
+                <ScalarProperty Name="cpccchk" ColumnName="cpccchk" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="personale_collaboratori">
+            <EntityTypeMapping TypeName="IngestDBModel.personale_collaboratori">
+              <MappingFragment StoreEntitySet="personale_collaboratori">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="cognome" ColumnName="cognome" />
+                <ScalarProperty Name="nome" ColumnName="nome" />
+                <ScalarProperty Name="data_nasci" ColumnName="data_nasci" />
+                <ScalarProperty Name="comune_nascita" ColumnName="comune_nascita" />
+                <ScalarProperty Name="provincia_nascita" ColumnName="provincia_nascita" />
+                <ScalarProperty Name="cap_nascita" ColumnName="cap_nascita" />
+                <ScalarProperty Name="codice_fiscale" ColumnName="codice_fiscale" />
+                <ScalarProperty Name="mansione" ColumnName="mansione" />
+                <ScalarProperty Name="tipo_collaborazione" ColumnName="tipo_collaborazione" />
+                <ScalarProperty Name="indirizzo_residenza" ColumnName="indirizzo_residenza" />
+                <ScalarProperty Name="localita_residenza" ColumnName="localita_residenza" />
+                <ScalarProperty Name="provincia_residenza" ColumnName="provincia_residenza" />
+                <ScalarProperty Name="cap_residenza" ColumnName="cap_residenza" />
+                <ScalarProperty Name="data_inizio_rapporto" ColumnName="data_inizio_rapporto" />
+                <ScalarProperty Name="data_fine_rapporto" ColumnName="data_fine_rapporto" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="cpccchk" ColumnName="cpccchk" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="province">
+            <EntityTypeMapping TypeName="IngestDBModel.province">
+              <MappingFragment StoreEntitySet="province">
+                <ScalarProperty Name="codice" ColumnName="codice" />
+                <ScalarProperty Name="descrizion" ColumnName="descrizion" />
+                <ScalarProperty Name="cpccchk" ColumnName="cpccchk" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="regioni">
+            <EntityTypeMapping TypeName="IngestDBModel.regioni">
+              <MappingFragment StoreEntitySet="regioni">
+                <ScalarProperty Name="nazione" ColumnName="nazione" />
+                <ScalarProperty Name="codice" ColumnName="codice" />
+                <ScalarProperty Name="descrizion" ColumnName="descrizion" />
+                <ScalarProperty Name="codf24" ColumnName="codf24" />
+                <ScalarProperty Name="cpccchk" ColumnName="cpccchk" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="settings">
+            <EntityTypeMapping TypeName="IngestDBModel.settings">
+              <MappingFragment StoreEntitySet="settings">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="valore" ColumnName="valore" />
+                <ScalarProperty Name="cpccchk" ColumnName="cpccchk" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="anagrafica_ospiti">
+            <EntityTypeMapping TypeName="IngestDBModel.anagrafica_ospiti">
+              <MappingFragment StoreEntitySet="anagrafica_ospiti">
+                <ScalarProperty Name="enabled" ColumnName="enabled" />
+                <ScalarProperty Name="cpccchk" ColumnName="cpccchk" />
+                <ScalarProperty Name="nome_cognome" ColumnName="nome_cognome" />
+                <ScalarProperty Name="residenza_assistenziale_alberghiera" ColumnName="residenza_assistenziale_alberghiera" />
+                <ScalarProperty Name="residenza_assistenziale" ColumnName="residenza_assistenziale" />
+                <ScalarProperty Name="residenza_sanitaria_assistenziale" ColumnName="residenza_sanitaria_assistenziale" />
+                <ScalarProperty Name="note_parente3" ColumnName="note_parente3" />
+                <ScalarProperty Name="provincia_parente3" ColumnName="provincia_parente3" />
+                <ScalarProperty Name="localita_parente3" ColumnName="localita_parente3" />
+                <ScalarProperty Name="indirizzo_parente3" ColumnName="indirizzo_parente3" />
+                <ScalarProperty Name="telefono_parente3" ColumnName="telefono_parente3" />
+                <ScalarProperty Name="rapporto_parente3" ColumnName="rapporto_parente3" />
+                <ScalarProperty Name="cognome_parente3" ColumnName="cognome_parente3" />
+                <ScalarProperty Name="nome_parente3" ColumnName="nome_parente3" />
+                <ScalarProperty Name="note_parente2" ColumnName="note_parente2" />
+                <ScalarProperty Name="provincia_parente2" ColumnName="provincia_parente2" />
+                <ScalarProperty Name="localita_parente2" ColumnName="localita_parente2" />
+                <ScalarProperty Name="indirizzo_parente2" ColumnName="indirizzo_parente2" />
+                <ScalarProperty Name="telefono_parente2" ColumnName="telefono_parente2" />
+                <ScalarProperty Name="rapporto_parente2" ColumnName="rapporto_parente2" />
+                <ScalarProperty Name="cognome_parente2" ColumnName="cognome_parente2" />
+                <ScalarProperty Name="nome_parente2" ColumnName="nome_parente2" />
+                <ScalarProperty Name="note_parente1" ColumnName="note_parente1" />
+                <ScalarProperty Name="provincia_parente1" ColumnName="provincia_parente1" />
+                <ScalarProperty Name="localita_parente1" ColumnName="localita_parente1" />
+                <ScalarProperty Name="indirizzo_parente1" ColumnName="indirizzo_parente1" />
+                <ScalarProperty Name="telefono_parente1" ColumnName="telefono_parente1" />
+                <ScalarProperty Name="rapporto_parente1" ColumnName="rapporto_parente1" />
+                <ScalarProperty Name="cognome_parente1" ColumnName="cognome_parente1" />
+                <ScalarProperty Name="nome_parente1" ColumnName="nome_parente1" />
+                <ScalarProperty Name="telefono_emergenza" ColumnName="telefono_emergenza" />
+                <ScalarProperty Name="nome_cognome_emergenza" ColumnName="nome_cognome_emergenza" />
+                <ScalarProperty Name="cap_domicilio" ColumnName="cap_domicilio" />
+                <ScalarProperty Name="provincia_domicilio" ColumnName="provincia_domicilio" />
+                <ScalarProperty Name="localita_domicilio" ColumnName="localita_domicilio" />
+                <ScalarProperty Name="indirizzo_domicilio" ColumnName="indirizzo_domicilio" />
+                <ScalarProperty Name="cap_residenza" ColumnName="cap_residenza" />
+                <ScalarProperty Name="provincia_residenza" ColumnName="provincia_residenza" />
+                <ScalarProperty Name="localita_residenza" ColumnName="localita_residenza" />
+                <ScalarProperty Name="indirizzo_residenza" ColumnName="indirizzo_residenza" />
+                <ScalarProperty Name="motivo_uscita" ColumnName="motivo_uscita" />
+                <ScalarProperty Name="data_uscita" ColumnName="data_uscita" />
+                <ScalarProperty Name="data_ingresso" ColumnName="data_ingresso" />
+                <ScalarProperty Name="nucleo" ColumnName="nucleo" />
+                <ScalarProperty Name="codice_medico_curante" ColumnName="codice_medico_curante" />
+                <ScalarProperty Name="pensioni_rendite" ColumnName="pensioni_rendite" />
+                <ScalarProperty Name="indennita_accompagnamento" ColumnName="indennita_accompagnamento" />
+                <ScalarProperty Name="grado_invalidita" ColumnName="grado_invalidita" />
+                <ScalarProperty Name="numero_esenzione_ticket" ColumnName="numero_esenzione_ticket" />
+                <ScalarProperty Name="libretto_sanitario" ColumnName="libretto_sanitario" />
+                <ScalarProperty Name="cognome_coniuge" ColumnName="cognome_coniuge" />
+                <ScalarProperty Name="nome_coniuge" ColumnName="nome_coniuge" />
+                <ScalarProperty Name="stato_civile" ColumnName="stato_civile" />
+                <ScalarProperty Name="professione" ColumnName="professione" />
+                <ScalarProperty Name="titolo_studio" ColumnName="titolo_studio" />
+                <ScalarProperty Name="provenienza" ColumnName="provenienza" />
+                <ScalarProperty Name="codice_fiscale" ColumnName="codice_fiscale" />
+                <ScalarProperty Name="cap_nascita" ColumnName="cap_nascita" />
+                <ScalarProperty Name="provincia_nascita" ColumnName="provincia_nascita" />
+                <ScalarProperty Name="comune_nascita" ColumnName="comune_nascita" />
+                <ScalarProperty Name="data_nascita" ColumnName="data_nascita" />
+                <ScalarProperty Name="nome" ColumnName="nome" />
+                <ScalarProperty Name="cognome" ColumnName="cognome" />
+                <ScalarProperty Name="codice_interno" ColumnName="codice_interno" />
+                <ScalarProperty Name="uid" ColumnName="uid" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="anagrafica_medici">
+            <EntityTypeMapping TypeName="IngestDBModel.anagrafica_medici">
+              <MappingFragment StoreEntitySet="anagrafica_medici">
+                <ScalarProperty Name="enabled" ColumnName="enabled" />
+                <ScalarProperty Name="cpccchk" ColumnName="cpccchk" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="attivo_sn" ColumnName="attivo_sn" />
+                <ScalarProperty Name="indirizzo_mail" ColumnName="indirizzo_mail" />
+                <ScalarProperty Name="id_regionale" ColumnName="id_regionale" />
+                <ScalarProperty Name="cellulare" ColumnName="cellulare" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="cap_ufficicio" ColumnName="cap_ufficicio" />
+                <ScalarProperty Name="provincia_ufficio" ColumnName="provincia_ufficio" />
+                <ScalarProperty Name="localita_ufficio" ColumnName="localita_ufficio" />
+                <ScalarProperty Name="indirizzo_ufficio" ColumnName="indirizzo_ufficio" />
+                <ScalarProperty Name="codice_fiscale" ColumnName="codice_fiscale" />
+                <ScalarProperty Name="cap_nascita" ColumnName="cap_nascita" />
+                <ScalarProperty Name="provincia_nascita" ColumnName="provincia_nascita" />
+                <ScalarProperty Name="comune_nascita" ColumnName="comune_nascita" />
+                <ScalarProperty Name="data_nascita" ColumnName="data_nascita" />
+                <ScalarProperty Name="nome" ColumnName="nome" />
+                <ScalarProperty Name="cognome" ColumnName="cognome" />
+                <ScalarProperty Name="uid" ColumnName="uid" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="nuclei">
+            <EntityTypeMapping TypeName="IngestDBModel.nuclei">
+              <MappingFragment StoreEntitySet="nuclei">
+                <ScalarProperty Name="enabled" ColumnName="enabled" />
+                <ScalarProperty Name="nucleo_padre" ColumnName="nucleo_padre" />
+                <ScalarProperty Name="descrizione" ColumnName="descrizione" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Nessuno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
