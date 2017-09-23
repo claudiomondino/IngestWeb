@@ -5,11 +5,21 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="IngestDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="allegati">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tipo_origine_allegato" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="id_origine" Type="int" Nullable="false" />
+          <Property Name="path_allegato" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="descrizione" Type="varchar" MaxLength="100" />
+        </EntityType>
         <EntityType Name="anagrafica_medici">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="uid" Type="varchar" MaxLength="36" Nullable="false" />
           <Property Name="cognome" Type="varchar" MaxLength="40" />
           <Property Name="nome" Type="varchar" MaxLength="40" />
@@ -35,7 +45,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="uid" Type="varchar" MaxLength="36" Nullable="false" />
           <Property Name="codice_interno" Type="varchar" MaxLength="5" />
           <Property Name="cognome" Type="varchar" MaxLength="40" />
@@ -141,14 +151,31 @@
           <Property Name="firmato" Type="varchar" MaxLength="1" />
           <Property Name="cpccchk" Type="varchar" MaxLength="10" />
         </EntityType>
+        <EntityType Name="movimenti_rilevazioni">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_tipo_rilevazione" Type="int" />
+          <Property Name="id_tipo_giro" Type="int" />
+          <Property Name="data_rilevazione" Type="date" />
+          <Property Name="ora_rilevazione" Type="time" Precision="7" />
+          <Property Name="operatore" Type="int" />
+          <Property Name="valore_numerico" Type="decimal" Precision="18" Scale="8" />
+          <Property Name="valore_numerico2" Type="decimal" Precision="18" Scale="8" />
+          <Property Name="unitamisura" Type="char" MaxLength="10" />
+          <Property Name="valore_boolean" Type="bit" />
+          <Property Name="valore_testo" Type="varchar" MaxLength="250" />
+          <Property Name="nota" Type="varchar" MaxLength="250" />
+        </EntityType>
         <EntityType Name="nuclei">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="descrizione" Type="varchar" MaxLength="40" />
           <Property Name="nucleo_padre" Type="varchar" MaxLength="10" />
           <Property Name="enabled" Type="varchar" MaxLength="1" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <EntityType Name="personale_collaboratori">
           <Key>
@@ -191,6 +218,18 @@
           <Property Name="codf24" Type="numeric" Precision="5" Scale="2" />
           <Property Name="cpccchk" Type="varchar" MaxLength="10" />
         </EntityType>
+        <EntityType Name="schede_ospiti">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tiposcheda" Type="numeric" Precision="10" Scale="0" />
+          <Property Name="id_ospite" Type="numeric" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="oggetto" Type="varchar" MaxLength="150" />
+          <Property Name="descrizione" Type="varchar" MaxLength="150" />
+          <Property Name="id_user" Type="int" />
+          <Property Name="data_ora" Type="datetime" />
+        </EntityType>
         <EntityType Name="settings">
           <Key>
             <PropertyRef Name="id" />
@@ -199,17 +238,94 @@
           <Property Name="valore" Type="varchar" MaxLength="50" />
           <Property Name="cpccchk" Type="varchar" MaxLength="10" />
         </EntityType>
+        <EntityType Name="somministrazione_terapia">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ospite" Type="int" />
+          <Property Name="data_somministrazione" Type="date" />
+          <Property Name="farmaco" Type="varchar" MaxLength="255" />
+          <Property Name="posologia" Type="varchar" MaxLength="50" />
+          <Property Name="via_somministrazione" Type="varchar" MaxLength="50" />
+          <Property Name="stato_somministrazione" Type="varchar" MaxLength="1" />
+          <Property Name="fascia_oraria" Type="varchar" MaxLength="50" />
+          <Property Name="nota_operatore" Type="varchar" MaxLength="255" />
+          <Property Name="operatore" Type="int" />
+          <Property Name="data_ora" Type="datetime" />
+        </EntityType>
+        <EntityType Name="terapie_ospiti">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ospite" Type="int" />
+          <Property Name="data_inizio" Type="date" />
+          <Property Name="data_fine" Type="date" />
+          <Property Name="farmaco" Type="varchar" MaxLength="255" />
+          <Property Name="posologia" Type="varchar" MaxLength="50" />
+          <Property Name="via_somministrazione" Type="varchar" MaxLength="50" />
+          <Property Name="stato" Type="int" />
+          <Property Name="colazione" Type="varchar" MaxLength="1" />
+          <Property Name="pranzo" Type="varchar" MaxLength="1" />
+          <Property Name="cena" Type="varchar" MaxLength="1" />
+          <Property Name="sera" Type="varchar" MaxLength="1" />
+          <Property Name="ora_inizio" Type="time" Precision="7" />
+          <Property Name="ora_fine" Type="time" Precision="7" />
+        </EntityType>
+        <EntityType Name="tipi_giro">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="descrizione" Type="varchar" MaxLength="50" />
+          <Property Name="ora_inizio_fascia" Type="time" Precision="7" />
+          <Property Name="ora_fine_fascia" Type="time" Precision="7" />
+          <Property Name="stato" Type="char" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="tipi_rilevazioni">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="descrizione" Type="varchar" MaxLength="50" />
+          <Property Name="descrizione_breve" Type="varchar" MaxLength="10" />
+          <Property Name="tipo_valore" Type="char" MaxLength="2" />
+          <Property Name="numero_decimali" Type="int" />
+          <Property Name="range_min1" Type="decimal" Precision="18" Scale="8" />
+          <Property Name="range_min2" Type="decimal" Precision="18" Scale="8" />
+          <Property Name="range_max1" Type="decimal" Precision="18" Scale="8" />
+          <Property Name="range_max2" Type="decimal" Precision="18" Scale="8" />
+          <Property Name="id_tipo_giro" Type="int" />
+          <Property Name="unita_misura" Type="char" MaxLength="10" />
+          <Property Name="stato" Type="char" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="tipi_scheda_ospite">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="descrizione" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
         <EntityContainer Name="IngestDBModelStoreContainer">
+          <EntitySet Name="allegati" EntityType="Self.allegati" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="anagrafica_medici" EntityType="Self.anagrafica_medici" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="anagrafica_ospiti" EntityType="Self.anagrafica_ospiti" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="comuni" EntityType="Self.comuni" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="diari" EntityType="Self.diari" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="dieta" EntityType="Self.dieta" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="movimenti_rilevazioni" EntityType="Self.movimenti_rilevazioni" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="nuclei" EntityType="Self.nuclei" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="personale_collaboratori" EntityType="Self.personale_collaboratori" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="province" EntityType="Self.province" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="regioni" EntityType="Self.regioni" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="schede_ospiti" EntityType="Self.schede_ospiti" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="settings" EntityType="Self.settings" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="somministrazione_terapia" EntityType="Self.somministrazione_terapia" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="terapie_ospiti" EntityType="Self.terapie_ospiti" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tipi_giro" EntityType="Self.tipi_giro" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tipi_rilevazioni" EntityType="Self.tipi_rilevazioni" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tipi_scheda_ospite" EntityType="Self.tipi_scheda_ospite" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -314,6 +430,14 @@
           <EntitySet Name="anagrafica_ospiti" EntityType="IngestDBModel.anagrafica_ospiti" />
           <EntitySet Name="anagrafica_medici" EntityType="IngestDBModel.anagrafica_medici" />
           <EntitySet Name="nuclei" EntityType="IngestDBModel.nuclei" />
+          <EntitySet Name="terapie_ospiti" EntityType="IngestDBModel.terapie_ospiti" />
+          <EntitySet Name="somministrazione_terapia" EntityType="IngestDBModel.somministrazione_terapia" />
+          <EntitySet Name="tipi_giro" EntityType="IngestDBModel.tipi_giro" />
+          <EntitySet Name="allegati" EntityType="IngestDBModel.allegati" />
+          <EntitySet Name="movimenti_rilevazioni" EntityType="IngestDBModel.movimenti_rilevazioni" />
+          <EntitySet Name="schede_ospiti" EntityType="IngestDBModel.schede_ospiti" />
+          <EntitySet Name="tipi_rilevazioni" EntityType="IngestDBModel.tipi_rilevazioni" />
+          <EntitySet Name="tipi_scheda_ospite" EntityType="IngestDBModel.tipi_scheda_ospite" />
         </EntityContainer>
         <EntityType Name="anagrafica_ospiti">
           <Key>
@@ -421,9 +545,121 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="descrizione" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="descrizione" Type="String" MaxLength="40" FixedLength="false" Unicode="false" >
+            <Documentation>
+              <LongDescription>Descrizione</LongDescription>
+            </Documentation>
+          </Property>
           <Property Name="nucleo_padre" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="enabled" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="terapie_ospiti">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ospite" Type="Int32" />
+          <Property Name="data_inizio" Type="DateTime" Precision="0" />
+          <Property Name="data_fine" Type="DateTime" Precision="0" />
+          <Property Name="farmaco" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="posologia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="via_somministrazione" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="stato" Type="Int32" />
+          <Property Name="colazione" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="pranzo" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="cena" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="sera" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="ora_inizio" Type="Time" Precision="7" />
+          <Property Name="ora_fine" Type="Time" Precision="7" />
+        </EntityType>
+        <EntityType Name="somministrazione_terapia">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ospite" Type="Int32" />
+          <Property Name="data_somministrazione" Type="DateTime" Precision="0" />
+          <Property Name="farmaco" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="posologia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="via_somministrazione" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="stato_somministrazione" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="fascia_oraria" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="nota_operatore" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="operatore" Type="Int32" />
+          <Property Name="data_ora" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tipi_giro">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="descrizione" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ora_inizio_fascia" Type="Time" Precision="7" />
+          <Property Name="ora_fine_fascia" Type="Time" Precision="7" />
+          <Property Name="stato" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="allegati">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tipo_origine_allegato" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="id_origine" Type="Int32" Nullable="false" />
+          <Property Name="path_allegato" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="descrizione" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="movimenti_rilevazioni">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_tipo_rilevazione" Type="Int32" />
+          <Property Name="id_tipo_giro" Type="Int32" />
+          <Property Name="data_rilevazione" Type="DateTime" Precision="0" />
+          <Property Name="ora_rilevazione" Type="Time" Precision="7" />
+          <Property Name="operatore" Type="Int32" />
+          <Property Name="valore_numerico" Type="Decimal" Precision="18" Scale="8" />
+          <Property Name="valore_numerico2" Type="Decimal" Precision="18" Scale="8" />
+          <Property Name="unitamisura" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="valore_boolean" Type="Boolean" />
+          <Property Name="valore_testo" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="nota" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="schede_ospiti">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tiposcheda" Type="Decimal" Precision="10" Scale="0" />
+          <Property Name="id_ospite" Type="Decimal" Nullable="false" Precision="10" Scale="0" />
+          <Property Name="oggetto" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="descrizione" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="id_user" Type="Int32" />
+          <Property Name="data_ora" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tipi_rilevazioni">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="descrizione" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="descrizione_breve" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="tipo_valore" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="numero_decimali" Type="Int32" />
+          <Property Name="range_min1" Type="Decimal" Precision="18" Scale="8" />
+          <Property Name="range_min2" Type="Decimal" Precision="18" Scale="8" />
+          <Property Name="range_max1" Type="Decimal" Precision="18" Scale="8" />
+          <Property Name="range_max2" Type="Decimal" Precision="18" Scale="8" />
+          <Property Name="id_tipo_giro" Type="Int32" />
+          <Property Name="unita_misura" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="stato" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tipi_scheda_ospite">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="descrizione" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -629,6 +865,122 @@
               <MappingFragment StoreEntitySet="nuclei">
                 <ScalarProperty Name="enabled" ColumnName="enabled" />
                 <ScalarProperty Name="nucleo_padre" ColumnName="nucleo_padre" />
+                <ScalarProperty Name="descrizione" ColumnName="descrizione" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="terapie_ospiti">
+            <EntityTypeMapping TypeName="IngestDBModel.terapie_ospiti">
+              <MappingFragment StoreEntitySet="terapie_ospiti">
+                <ScalarProperty Name="ora_fine" ColumnName="ora_fine" />
+                <ScalarProperty Name="ora_inizio" ColumnName="ora_inizio" />
+                <ScalarProperty Name="sera" ColumnName="sera" />
+                <ScalarProperty Name="cena" ColumnName="cena" />
+                <ScalarProperty Name="pranzo" ColumnName="pranzo" />
+                <ScalarProperty Name="colazione" ColumnName="colazione" />
+                <ScalarProperty Name="stato" ColumnName="stato" />
+                <ScalarProperty Name="via_somministrazione" ColumnName="via_somministrazione" />
+                <ScalarProperty Name="posologia" ColumnName="posologia" />
+                <ScalarProperty Name="farmaco" ColumnName="farmaco" />
+                <ScalarProperty Name="data_fine" ColumnName="data_fine" />
+                <ScalarProperty Name="data_inizio" ColumnName="data_inizio" />
+                <ScalarProperty Name="ospite" ColumnName="ospite" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="somministrazione_terapia">
+            <EntityTypeMapping TypeName="IngestDBModel.somministrazione_terapia">
+              <MappingFragment StoreEntitySet="somministrazione_terapia">
+                <ScalarProperty Name="data_ora" ColumnName="data_ora" />
+                <ScalarProperty Name="operatore" ColumnName="operatore" />
+                <ScalarProperty Name="nota_operatore" ColumnName="nota_operatore" />
+                <ScalarProperty Name="fascia_oraria" ColumnName="fascia_oraria" />
+                <ScalarProperty Name="stato_somministrazione" ColumnName="stato_somministrazione" />
+                <ScalarProperty Name="via_somministrazione" ColumnName="via_somministrazione" />
+                <ScalarProperty Name="posologia" ColumnName="posologia" />
+                <ScalarProperty Name="farmaco" ColumnName="farmaco" />
+                <ScalarProperty Name="data_somministrazione" ColumnName="data_somministrazione" />
+                <ScalarProperty Name="ospite" ColumnName="ospite" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tipi_giro">
+            <EntityTypeMapping TypeName="IngestDBModel.tipi_giro">
+              <MappingFragment StoreEntitySet="tipi_giro">
+                <ScalarProperty Name="stato" ColumnName="stato" />
+                <ScalarProperty Name="ora_fine_fascia" ColumnName="ora_fine_fascia" />
+                <ScalarProperty Name="ora_inizio_fascia" ColumnName="ora_inizio_fascia" />
+                <ScalarProperty Name="descrizione" ColumnName="descrizione" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="allegati">
+            <EntityTypeMapping TypeName="IngestDBModel.allegati">
+              <MappingFragment StoreEntitySet="allegati">
+                <ScalarProperty Name="descrizione" ColumnName="descrizione" />
+                <ScalarProperty Name="path_allegato" ColumnName="path_allegato" />
+                <ScalarProperty Name="id_origine" ColumnName="id_origine" />
+                <ScalarProperty Name="tipo_origine_allegato" ColumnName="tipo_origine_allegato" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="movimenti_rilevazioni">
+            <EntityTypeMapping TypeName="IngestDBModel.movimenti_rilevazioni">
+              <MappingFragment StoreEntitySet="movimenti_rilevazioni">
+                <ScalarProperty Name="nota" ColumnName="nota" />
+                <ScalarProperty Name="valore_testo" ColumnName="valore_testo" />
+                <ScalarProperty Name="valore_boolean" ColumnName="valore_boolean" />
+                <ScalarProperty Name="unitamisura" ColumnName="unitamisura" />
+                <ScalarProperty Name="valore_numerico2" ColumnName="valore_numerico2" />
+                <ScalarProperty Name="valore_numerico" ColumnName="valore_numerico" />
+                <ScalarProperty Name="operatore" ColumnName="operatore" />
+                <ScalarProperty Name="ora_rilevazione" ColumnName="ora_rilevazione" />
+                <ScalarProperty Name="data_rilevazione" ColumnName="data_rilevazione" />
+                <ScalarProperty Name="id_tipo_giro" ColumnName="id_tipo_giro" />
+                <ScalarProperty Name="id_tipo_rilevazione" ColumnName="id_tipo_rilevazione" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="schede_ospiti">
+            <EntityTypeMapping TypeName="IngestDBModel.schede_ospiti">
+              <MappingFragment StoreEntitySet="schede_ospiti">
+                <ScalarProperty Name="data_ora" ColumnName="data_ora" />
+                <ScalarProperty Name="id_user" ColumnName="id_user" />
+                <ScalarProperty Name="descrizione" ColumnName="descrizione" />
+                <ScalarProperty Name="oggetto" ColumnName="oggetto" />
+                <ScalarProperty Name="id_ospite" ColumnName="id_ospite" />
+                <ScalarProperty Name="tiposcheda" ColumnName="tiposcheda" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tipi_rilevazioni">
+            <EntityTypeMapping TypeName="IngestDBModel.tipi_rilevazioni">
+              <MappingFragment StoreEntitySet="tipi_rilevazioni">
+                <ScalarProperty Name="stato" ColumnName="stato" />
+                <ScalarProperty Name="unita_misura" ColumnName="unita_misura" />
+                <ScalarProperty Name="id_tipo_giro" ColumnName="id_tipo_giro" />
+                <ScalarProperty Name="range_max2" ColumnName="range_max2" />
+                <ScalarProperty Name="range_max1" ColumnName="range_max1" />
+                <ScalarProperty Name="range_min2" ColumnName="range_min2" />
+                <ScalarProperty Name="range_min1" ColumnName="range_min1" />
+                <ScalarProperty Name="numero_decimali" ColumnName="numero_decimali" />
+                <ScalarProperty Name="tipo_valore" ColumnName="tipo_valore" />
+                <ScalarProperty Name="descrizione_breve" ColumnName="descrizione_breve" />
+                <ScalarProperty Name="descrizione" ColumnName="descrizione" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tipi_scheda_ospite">
+            <EntityTypeMapping TypeName="IngestDBModel.tipi_scheda_ospite">
+              <MappingFragment StoreEntitySet="tipi_scheda_ospite">
                 <ScalarProperty Name="descrizione" ColumnName="descrizione" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>

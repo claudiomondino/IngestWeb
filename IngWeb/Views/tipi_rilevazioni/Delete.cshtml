@@ -1,0 +1,112 @@
+﻿@model IngWeb.Models.tipi_rilevazioni
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>tipi_rilevazioni</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.descrizione)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.descrizione)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.descrizione_breve)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.descrizione_breve)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tipo_valore)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tipo_valore)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.numero_decimali)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.numero_decimali)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.range_min1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.range_min1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.range_min2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.range_min2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.range_max1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.range_max1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.range_max2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.range_max2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.id_tipo_giro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.id_tipo_giro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.unita_misura)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.unita_misura)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.stato)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.stato)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

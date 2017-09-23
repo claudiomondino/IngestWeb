@@ -1,0 +1,93 @@
+﻿@model IEnumerable<IngWeb.Models.tipi_rilevazioni>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.descrizione)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.descrizione_breve)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tipo_valore)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.numero_decimali)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.range_min1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.range_min2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.range_max1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.range_max2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.id_tipo_giro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.unita_misura)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.stato)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.descrizione)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.descrizione_breve)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tipo_valore)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.numero_decimali)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.range_min1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.range_min2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.range_max1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.range_max2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.id_tipo_giro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.unita_misura)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.stato)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

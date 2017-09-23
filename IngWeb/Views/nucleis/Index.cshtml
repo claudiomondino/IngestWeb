@@ -4,41 +4,31 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+<h2>
+    Nuclei&nbsp;&nbsp;<img src="~/Content/create.png" class="submit" onclick="location.href ='@Url.Action("Create", 0)'" style="overflow: hidden; position: relative; width:50px; height:50px;" />
+</h2>
 <table class="table">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.descrizione)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.nucleo_padre)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.enabled)
-        </th>
+
         <th></th>
+        <th>
+            Descrizione nucleo
+        </th>
+        
     </tr>
 
-@foreach (var item in Model) {
+@foreach (var item in Model)
+{
     <tr>
+        <td width="150px">
+            <img src="~/Content/edit.png" class="submit" onclick="location.href ='@Url.Action("Edit", new { id = item.id })'" style="overflow: hidden; position: relative; width:40px; height:40px;" />
+            <img src="~/Content/view.png" class="submit" onclick="location.href ='@Url.Action("Details", new { id = item.id })'" style="overflow: hidden; position: relative; width:40px; height:40px;" />
+            <img src="~/Content/delete.png" class="submit" onclick="location.href ='@Url.Action("Delete", new { id = item.id })'" style="overflow: hidden; position: relative; width:40px; height:40px;" />
+        </td>
         <td>
             @Html.DisplayFor(modelItem => item.descrizione)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.nucleo_padre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.enabled)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id })
-        </td>
+
     </tr>
 }
 

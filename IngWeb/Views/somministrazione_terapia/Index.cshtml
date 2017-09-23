@@ -1,0 +1,82 @@
+﻿@model IEnumerable<IngWeb.Models.somministrazione_terapia>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>
+    Somministrazione terapia @ViewBag.NomeOspite del @DateTime.Now.ToShortDateString()
+    &nbsp;&nbsp;<img src="~/Content/indietro.png" alt="Torna indietro" onclick="history.back()" style="overflow: hidden; position: relative; width:50px; height:50px;" />
+    &nbsp;&nbsp;<img src="~/Content/create.png" class="submit" onclick="location.href ='@Url.Action("Create", new { pOspite = ViewBag.OspiteParam })'" style="overflow: hidden; position: relative; width:50px; height:50px;" />
+</h2>
+
+<table class="table">
+    <tr>
+        <th align="center">
+            Conferma
+        </th>
+        <th align="center">
+            Annulla
+        </th>
+        <th>
+            Stato
+        </th>
+        <th>
+            Fascia oraria
+        </th>
+        <th>
+            Farmaco
+        </th>
+        <th>
+            Posologia
+        </th>
+        <th>
+            Via somm.
+        </th>
+
+
+        <th></th>
+    </tr>
+      
+@foreach (var item in Model)
+{
+    <tr>
+        <td align="center">
+            <img src="~/Content/confermato.png" class="submit" onclick="location.href ='@Url.Action("Conferma", new { id = item.id })'" style="overflow: hidden; position: relative; width:30px; height:30px;" />
+        </td>
+        <td align="center">
+            <img src="~/Content/annullato.png" class="submit" onclick="location.href ='@Url.Action("Annulla", new { id = item.id })'" style="overflow: hidden; position: relative; width:30px; height:30px;" />
+        </td>
+        <td align="center">
+            @if (item.stato_somministrazione == "S")
+            {
+                <img src="~/Content/somministrazione.png" style="overflow: hidden; position: relative; width:30px; height:30px;" />
+            }
+            @if (item.stato_somministrazione == "A")
+            {
+                <img src="~/Content/somministrazione_cancelled.png" style="overflow: hidden; position: relative; width:30px; height:30px;" />
+            }
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.fascia_oraria)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.farmaco)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.posologia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.via_somministrazione)
+        </td>
+        <td align="center">
+        </td>
+        <td>
+            <img src="~/Content/edit.png" class="submit" onclick="location.href ='@Url.Action("Edit", new { id = item.id })'" style="overflow: hidden; position: relative; width:30px; height:30px;" />
+            <img src="~/Content/view.png" class="submit" onclick="location.href ='@Url.Action("Details", new { id = item.id })'" style="overflow: hidden; position: relative; width:30px; height:30px;" />
+        </td>
+    </tr>
+}
+
+</table>

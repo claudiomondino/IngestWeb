@@ -23,7 +23,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.nucleo_padre)
+            @Html.DropDownList("nucleo_padre", ViewBag.nucleo_padrelist as SelectList, new { @disabled = "disabled" })
         </dd>
 
         <dt>

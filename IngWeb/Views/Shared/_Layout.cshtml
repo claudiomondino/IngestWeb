@@ -18,15 +18,31 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
+
                 @Html.ActionLink("IngestWEB - Gestione cartelle cliniche", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Ospiti", "Index", "anagrafica_ospiti")</li>
-                    <li>@Html.ActionLink("Medici", "Index", "anagrafica_medici")</li>
-                    <li>@Html.ActionLink("Nuclei", "Index", "nucleis")</li>
-                </ul>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <a href='@Url.Action("Index", "Home")'>
+                    <img src="~/Content/home.png" style="overflow: hidden; position: relative; width:40px; height:40px;" />
+                </a>
+                &nbsp;&nbsp;
+                <a href='@Url.Action("Index", "nucleis")'>
+                    <img src="~/Content/nuclei.png" style="overflow: hidden; position: relative; width:40px; height:40px;" />
+                </a>
+                &nbsp;&nbsp;
+                <a href='@Url.Action("Index", "anagrafica_ospiti")'>
+                    <img src="~/Content/ospite.png" style="overflow: hidden; position: relative; width:40px; height:40px;" />
+                </a>
+                &nbsp;&nbsp;
+                <a href='@Url.Action("Index", "anagrafica_ospiti")'>
+                    <img src="~/Content/somministrazione.png" style="overflow: hidden; position: relative; width:40px; height:40px;" />
+                </a>
+                &nbsp;&nbsp;
+                <a href='@Url.Action("Index", "anagrafica_medici")'>
+                    <img src="~/Content/medico.png" style="overflow: hidden; position: relative; width:40px; height:40px;" />
+                </a>
+
                 @Html.Partial("_LoginPartial")
             </div>
         </div>

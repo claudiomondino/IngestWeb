@@ -79,6 +79,7 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
@@ -200,13 +201,25 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\anagrafica_mediciController.cs" />
     <Compile Include="Controllers\anagrafica_ospitiController.cs" />
+    <Compile Include="Controllers\anagraficheController.cs" />
+    <Compile Include="Controllers\Class1.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ImpostazioniController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\nucleisController.cs" />
+    <Compile Include="Controllers\somministrazione_terapiaController.cs" />
+    <Compile Include="Controllers\somministrazione_terapia_meseController.cs" />
+    <Compile Include="Controllers\terapie_ospitiController.cs" />
+    <Compile Include="Controllers\tipi_giroController.cs" />
+    <Compile Include="Controllers\tipi_rilevazioniController.cs" />
+    <Compile Include="Controllers\tipi_scheda_ospiteController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\allegati.cs">
+      <DependentUpon>ModelDati.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\anagrafica_medici.cs">
       <DependentUpon>ModelDati.tt</DependentUpon>
     </Compile>
@@ -239,6 +252,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ModelDati.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\movimenti_rilevazioni.cs">
+      <DependentUpon>ModelDati.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\nuclei.cs">
       <DependentUpon>ModelDati.tt</DependentUpon>
     </Compile>
@@ -251,7 +267,25 @@
     <Compile Include="Models\regioni.cs">
       <DependentUpon>ModelDati.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\schede_ospiti.cs">
+      <DependentUpon>ModelDati.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\settings.cs">
+      <DependentUpon>ModelDati.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\somministrazione_terapia.cs">
+      <DependentUpon>ModelDati.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\terapie_ospiti.cs">
+      <DependentUpon>ModelDati.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tipi_giro.cs">
+      <DependentUpon>ModelDati.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tipi_rilevazioni.cs">
+      <DependentUpon>ModelDati.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tipi_scheda_ospite.cs">
       <DependentUpon>ModelDati.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -347,6 +381,39 @@
     <Content Include="Views\nucleis\Details.cshtml" />
     <Content Include="Views\nucleis\Edit.cshtml" />
     <Content Include="Views\nucleis\Index.cshtml" />
+    <Content Include="Views\terapie_ospiti\Create.cshtml" />
+    <Content Include="Views\terapie_ospiti\Delete.cshtml" />
+    <Content Include="Views\terapie_ospiti\Details.cshtml" />
+    <Content Include="Views\terapie_ospiti\Edit.cshtml" />
+    <Content Include="Views\terapie_ospiti\Index.cshtml" />
+    <Content Include="Views\somministrazione_terapia\Create.cshtml" />
+    <Content Include="Views\somministrazione_terapia\Delete.cshtml" />
+    <Content Include="Views\somministrazione_terapia\Details.cshtml" />
+    <Content Include="Views\somministrazione_terapia\Edit.cshtml" />
+    <Content Include="Views\somministrazione_terapia\Index.cshtml" />
+    <Content Include="Views\tipi_giro\Create.cshtml" />
+    <Content Include="Views\tipi_giro\Delete.cshtml" />
+    <Content Include="Views\tipi_giro\Details.cshtml" />
+    <Content Include="Views\tipi_giro\Edit.cshtml" />
+    <Content Include="Views\tipi_giro\Index.cshtml" />
+    <Content Include="Views\Home\Settings.cshtml" />
+    <Content Include="Views\Impostazioni\Index.cshtml" />
+    <Content Include="Views\tipi_rilevazioni\Create.cshtml" />
+    <Content Include="Views\tipi_rilevazioni\Delete.cshtml" />
+    <Content Include="Views\tipi_rilevazioni\Details.cshtml" />
+    <Content Include="Views\tipi_rilevazioni\Edit.cshtml" />
+    <Content Include="Views\tipi_rilevazioni\Index.cshtml" />
+    <Content Include="Views\tipi_scheda_ospite\Create.cshtml" />
+    <Content Include="Views\tipi_scheda_ospite\Delete.cshtml" />
+    <Content Include="Views\tipi_scheda_ospite\Details.cshtml" />
+    <Content Include="Views\tipi_scheda_ospite\Edit.cshtml" />
+    <Content Include="Views\tipi_scheda_ospite\Index.cshtml" />
+    <Content Include="Views\anagrafiche\index.cshtml" />
+    <Content Include="Views\somministrazione_terapia_mese\Create.cshtml" />
+    <Content Include="Views\somministrazione_terapia_mese\Delete.cshtml" />
+    <Content Include="Views\somministrazione_terapia_mese\Details.cshtml" />
+    <Content Include="Views\somministrazione_terapia_mese\Edit.cshtml" />
+    <Content Include="Views\somministrazione_terapia_mese\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

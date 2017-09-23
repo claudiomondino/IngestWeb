@@ -4,144 +4,49 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>
+    Medici&nbsp;&nbsp;<img src="~/Content/create.png" class="submit" onclick="location.href ='@Url.Action("Create", 0)'" style="overflow: hidden; position: relative; width:50px; height:50px;" />
+</h2>
+    <table class="table">
+        <tr>
+            <th></th>
+            <th>
+                Cognome
+            </th>
+            <th>
+                Nome
+            </th>
+            <th>
+                ID Regionale
+            </th>
+            <th>
+                Indirizzo mail
+            </th>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.uid)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.cognome)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.nome)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.data_nascita)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.comune_nascita)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.provincia_nascita)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.cap_nascita)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.codice_fiscale)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.indirizzo_ufficio)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.localita_ufficio)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.provincia_ufficio)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.cap_ufficicio)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.telefono)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.cellulare)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.id_regionale)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.indirizzo_mail)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.attivo_sn)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.user_id)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.cpccchk)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.enabled)
-        </th>
-        <th></th>
-    </tr>
+        </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.uid)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.cognome)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.nome)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.data_nascita)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.comune_nascita)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.provincia_nascita)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.cap_nascita)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.codice_fiscale)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.indirizzo_ufficio)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.localita_ufficio)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.provincia_ufficio)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.cap_ufficicio)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.telefono)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.cellulare)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.id_regionale)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.indirizzo_mail)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.attivo_sn)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.user_id)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.cpccchk)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.enabled)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id })
-        </td>
-    </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td width="150px">
+                    <img src="~/Content/edit.png" class="submit" onclick="location.href ='@Url.Action("Edit", new { id = item.id })'" style="overflow: hidden; position: relative; width:40px; height:40px;" />
+                    <img src="~/Content/view.png" class="submit" onclick="location.href ='@Url.Action("Details", new { id = item.id })'" style="overflow: hidden; position: relative; width:40px; height:40px;" />
+                    <img src="~/Content/delete.png" class="submit" onclick="location.href ='@Url.Action("Delete", new { id = item.id })'" style="overflow: hidden; position: relative; width:40px; height:40px;" />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.cognome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.id_regionale)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.indirizzo_mail)
+                </td>
 
-</table>
+            </tr>
+        }
+
+    </table>

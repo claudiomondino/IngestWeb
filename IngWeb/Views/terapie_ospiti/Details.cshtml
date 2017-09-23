@@ -1,0 +1,106 @@
+﻿@model IngWeb.Models.terapie_ospiti
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>terapie_ospiti</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ospite)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ospite)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.data_inizio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.data_inizio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.data_fine)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.data_fine)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.farmaco)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.farmaco)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.posologia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.posologia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.via_somministrazione)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.via_somministrazione)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.stato)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.stato)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.colazione)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.colazione)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pranzo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pranzo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cena)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cena)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sera)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sera)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    <a href="javascript:history.back()">Torna all'elenco</a>
+</p>

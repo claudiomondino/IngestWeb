@@ -1,0 +1,98 @@
+﻿@model IngWeb.Models.somministrazione_terapia
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>somministrazione_terapia</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ospite)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ospite)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.data_somministrazione)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.data_somministrazione)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.farmaco)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.farmaco)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.posologia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.posologia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.via_somministrazione)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.via_somministrazione)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.stato_somministrazione)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.stato_somministrazione)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fascia_oraria)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fascia_oraria)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nota_operatore)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nota_operatore)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.operatore)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.operatore)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.data_ora)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.data_ora)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

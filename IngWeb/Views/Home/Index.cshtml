@@ -2,9 +2,26 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <p>
-        <a href="http://asp.net" class="btn btn-primary btn-lg">OSPITI</a>
-        <a href="http://asp.net" class="btn btn-primary btn-lg">TERAPIA</a>
-    </p>
+<div class="jumbotron" style="background-color: white">
+    <table>
+        <tr>
+
+            <td width="200px" align="center">
+                <img src="~/Content/ospite.png" class="submit" onclick="location.href ='@Url.Action("Index", "anagrafica_ospiti")'" style="overflow: hidden; position: relative; width:150px; height:150px;" />
+                Ospiti
+            </td>
+            <td width="200px" align="center">
+                <img src="~/Content/somministrazione.png" class="submit" onclick="location.href ='@Url.Action("Index", "anagrafica_ospiti")'" style="overflow: hidden; position: relative; width:150px; height:150px;" />
+                Terapia
+            </td>
+            <td width="200px" align="center">
+                <img src="~/Content/anagrafiche.png" class="submit" onclick="location.href ='@Url.Action("Index", "Anagrafiche")'" style="overflow: hidden; position: relative; width:150px; height:150px;" />
+                Anagrafiche
+            </td>
+            <td width="200px" align="center">
+                <img src="~/Content/setting.png" class="submit" onclick="location.href ='@Url.Action("Index", "Impostazioni")'" style="overflow: hidden; position: relative; width:150px; height:150px;" />
+                Impostazioni
+            </td>
+        </tr>
+    </table>
 </div>

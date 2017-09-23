@@ -4,218 +4,36 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Anagrafica ospiti</h2>
+<h2>
+    Anagrafica ospiti&nbsp;&nbsp;<img src="~/Content/create.png" class="submit" onclick="location.href ='@Url.Action("Create", 0)'" style="overflow: hidden; position: relative; width:50px; height:50px;" />
+</h2>
 
-<p>
-    @Html.ActionLink("Nuovo ospite", "Create")
-</p>
 <table class="table">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.uid)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.codice_interno)
-        </th>
+        <th></th>
         <th>
             @Html.DisplayNameFor(model => model.cognome)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.nome)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.data_nascita)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.comune_nascita)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.provincia_nascita)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.cap_nascita)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.codice_fiscale)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.provenienza)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.titolo_studio)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.professione)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.stato_civile)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.nome_coniuge)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.cognome_coniuge)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.libretto_sanitario)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.numero_esenzione_ticket)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.grado_invalidita)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.indennita_accompagnamento)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.pensioni_rendite)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.codice_medico_curante)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.nucleo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.data_ingresso)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.data_uscita)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.motivo_uscita)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.indirizzo_residenza)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.localita_residenza)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.provincia_residenza)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.cap_residenza)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.indirizzo_domicilio)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.localita_domicilio)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.provincia_domicilio)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.cap_domicilio)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.nome_cognome_emergenza)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.telefono_emergenza)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.nome_parente1)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.cognome_parente1)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.rapporto_parente1)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.telefono_parente1)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.indirizzo_parente1)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.localita_parente1)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.provincia_parente1)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.note_parente1)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.nome_parente2)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.cognome_parente2)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.rapporto_parente2)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.telefono_parente2)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.indirizzo_parente2)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.localita_parente2)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.provincia_parente2)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.note_parente2)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.nome_parente3)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.cognome_parente3)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.rapporto_parente3)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.telefono_parente3)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.indirizzo_parente3)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.localita_parente3)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.provincia_parente3)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.note_parente3)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.residenza_sanitaria_assistenziale)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.residenza_assistenziale)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.residenza_assistenziale_alberghiera)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.nome_cognome)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.cpccchk)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.enabled)
-        </th>
-        <th></th>
+
     </tr>
 
 @foreach (var item in Model) {
     <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.uid)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.codice_interno)
+        <td width="300px">
+            <img src="~/Content/edit.png" class="submit" onclick="location.href ='@Url.Action("Edit", new { id = item.id })'" style="overflow: hidden; position: relative; width:40px; height:40px;" />
+            &nbsp;&nbsp;
+            <img src="~/Content/view.png" class="submit" onclick="location.href ='@Url.Action("Details", new { id = item.id })'" style="overflow: hidden; position: relative; width:40px; height:40px;" />
+            &nbsp;&nbsp;
+            <img src="~/Content/delete.png" class="submit" onclick="location.href ='@Url.Action("Delete", new { id = item.id })'" style="overflow: hidden; position: relative; width:40px; height:40px;" />
+            &nbsp; &nbsp;
+            <img src="~/Content/terapia.png" class="submit" onclick="location.href ='@Url.Action("Index", "terapie_ospiti", new { pOspite = item.id })'" style="overflow: hidden; position: relative; width:40px; height:40px;" />
+            &nbsp; &nbsp;
+            <img src="~/Content/somministrazione.png" alt="Somministrazione Terapia" class="submit" onclick="location.href ='@Url.Action("Index", "somministrazione_terapia", new { pOspite = item.id })'" style="overflow: hidden; position: relative; width:40px; height:40px;" />
+            &nbsp; &nbsp;
+            <img src="~/Content/somministrazione.png" alt="Somministrazione Terapia" class="submit" onclick="location.href ='@Url.Action("Index", "somministrazione_terapia_mese", new { pOspite = item.id, pMese = DateTime.Now.Month.ToString(), pAnno = DateTime.Now.Year.ToString()})'" style="overflow: hidden; position: relative; width:40px; height:40px;" />
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.cognome)
@@ -223,194 +41,7 @@
         <td>
             @Html.DisplayFor(modelItem => item.nome)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.data_nascita)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.comune_nascita)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.provincia_nascita)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.cap_nascita)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.codice_fiscale)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.provenienza)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.titolo_studio)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.professione)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.stato_civile)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.nome_coniuge)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.cognome_coniuge)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.libretto_sanitario)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.numero_esenzione_ticket)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.grado_invalidita)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.indennita_accompagnamento)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.pensioni_rendite)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.codice_medico_curante)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.nucleo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.data_ingresso)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.data_uscita)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.motivo_uscita)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.indirizzo_residenza)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.localita_residenza)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.provincia_residenza)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.cap_residenza)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.indirizzo_domicilio)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.localita_domicilio)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.provincia_domicilio)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.cap_domicilio)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.nome_cognome_emergenza)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.telefono_emergenza)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.nome_parente1)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.cognome_parente1)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.rapporto_parente1)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.telefono_parente1)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.indirizzo_parente1)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.localita_parente1)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.provincia_parente1)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.note_parente1)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.nome_parente2)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.cognome_parente2)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.rapporto_parente2)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.telefono_parente2)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.indirizzo_parente2)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.localita_parente2)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.provincia_parente2)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.note_parente2)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.nome_parente3)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.cognome_parente3)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.rapporto_parente3)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.telefono_parente3)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.indirizzo_parente3)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.localita_parente3)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.provincia_parente3)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.note_parente3)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.residenza_sanitaria_assistenziale)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.residenza_assistenziale)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.residenza_assistenziale_alberghiera)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.nome_cognome)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.cpccchk)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.enabled)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id })
-        </td>
+       
     </tr>
 }
 

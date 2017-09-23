@@ -1,0 +1,97 @@
+﻿@model IEnumerable<IngWeb.Models.terapie_ospiti>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Terapie</h2>
+
+<p>
+    @Html.ActionLink("Nuova terapia", "Create", "terapie_ospiti", routeValues: new
+{
+    pOspite = 1,
+},
+    htmlAttributes: null)
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ospite)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.data_inizio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.data_fine)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.farmaco)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.posologia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.via_somministrazione)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.stato)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.colazione)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.pranzo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cena)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sera)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ospite)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.data_inizio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.data_fine)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.farmaco)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.posologia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.via_somministrazione)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.stato)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.colazione)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.pranzo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cena)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sera)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

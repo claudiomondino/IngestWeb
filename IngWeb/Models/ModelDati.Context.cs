@@ -35,5 +35,13 @@ namespace IngWeb.Models
         public virtual DbSet<anagrafica_ospiti> anagrafica_ospiti { get; set; }
         public virtual DbSet<anagrafica_medici> anagrafica_medici { get; set; }
         public virtual DbSet<nuclei> nuclei { get; set; }
+        public virtual DbSet<terapie_ospiti> terapie_ospiti { get; set; }
+        public virtual DbSet<somministrazione_terapia> somministrazione_terapia { get; set; }
+        public virtual DbSet<tipi_giro> tipi_giro { get; set; }
+        public virtual DbSet<allegati> allegati { get; set; }
+        public virtual DbSet<movimenti_rilevazioni> movimenti_rilevazioni { get; set; }
+        public virtual DbSet<schede_ospiti> schede_ospiti { get; set; }
+        public virtual DbSet<tipi_rilevazioni> tipi_rilevazioni { get; set; }
+        public virtual DbSet<tipi_scheda_ospite> tipi_scheda_ospite { get; set; }
     }
 }

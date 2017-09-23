@@ -33,6 +33,16 @@ namespace IngWeb.Controllers
             {
                 return HttpNotFound();
             }
+
+            var nucleoscelto = nuclei.nucleo_padre;
+            if (nuclei.nucleo_padre == null)
+
+                ViewBag.nucleo_padrelist = new SelectList(db.nuclei, "id", "descrizione");
+
+            else
+
+                ViewBag.nucleo_padrelist = new SelectList(db.nuclei.ToArray(), "id", "descrizione", nucleoscelto);
+
             return View(nuclei);
         }
 
@@ -81,6 +91,8 @@ namespace IngWeb.Controllers
             else
 
                 ViewBag.nucleo_padrelist = new SelectList(db.nuclei.ToArray(), "id", "descrizione", nucleoscelto);
+            
+            
                 
             return View(nuclei);
         }
@@ -113,6 +125,16 @@ namespace IngWeb.Controllers
             {
                 return HttpNotFound();
             }
+
+            var nucleoscelto = nuclei.nucleo_padre;
+            if (nuclei.nucleo_padre == null)
+
+                ViewBag.nucleo_padrelist = new SelectList(db.nuclei, "id", "descrizione");
+
+            else
+
+                ViewBag.nucleo_padrelist = new SelectList(db.nuclei.ToArray(), "id", "descrizione", nucleoscelto);
+
             return View(nuclei);
         }
 

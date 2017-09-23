@@ -15,6 +15,14 @@
         <EntityTypeShape EntityType="IngestDBModel.anagrafica_ospiti" Width="1.5" PointX="4.625" PointY="4.125" />
         <EntityTypeShape EntityType="IngestDBModel.anagrafica_medici" Width="1.5" PointX="0.5" PointY="3.625" />
         <EntityTypeShape EntityType="IngestDBModel.nuclei" Width="1.5" PointX="2.625" PointY="3.875" />
+        <EntityTypeShape EntityType="IngestDBModel.terapie_ospiti" Width="1.5" PointX="0.75" PointY="9.75" />
+        <EntityTypeShape EntityType="IngestDBModel.somministrazione_terapia" Width="1.5" PointX="2.75" PointY="6" />
+        <EntityTypeShape EntityType="IngestDBModel.tipi_giro" Width="1.5" PointX="11.375" PointY="0.75" />
+        <EntityTypeShape EntityType="IngestDBModel.allegati" Width="1.5" PointX="9.375" PointY="6.75" />
+        <EntityTypeShape EntityType="IngestDBModel.movimenti_rilevazioni" Width="1.5" PointX="7.375" PointY="9.75" />
+        <EntityTypeShape EntityType="IngestDBModel.schede_ospiti" Width="1.5" PointX="9.375" PointY="9.75" />
+        <EntityTypeShape EntityType="IngestDBModel.tipi_rilevazioni" Width="1.5" PointX="11.375" PointY="3.75" />
+        <EntityTypeShape EntityType="IngestDBModel.tipi_scheda_ospite" Width="1.5" PointX="11.375" PointY="8.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
