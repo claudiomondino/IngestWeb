@@ -48,7 +48,8 @@ namespace IngWeb.Controllers
             this.ViewBag.NomeOspite = (from osp in db.anagrafica_ospiti
                            where osp.id == pOspite
                            select osp.nome + " " + osp.cognome).First().ToString();
-       
+            this.ViewBag.fascia_terapia = new SelectList(db.fasce_terapia, "codice", "codice");
+
             return View();
         }
 
@@ -57,7 +58,7 @@ namespace IngWeb.Controllers
         // Per ulteriori dettagli, vedere http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,ospite,data_inizio,data_fine,farmaco,posologia,via_somministrazione,stato,colazione,pranzo,cena,sera")] terapie_ospiti terapie_ospiti)
+        public ActionResult Create([Bind(Include = "id,ospite,data_inizio,data_fine,farmaco,posologia,via_somministrazione,stato,colazione,pranzo,cena,sera,fascia_terapia")] terapie_ospiti terapie_ospiti)
         {
             if (ModelState.IsValid)
             {
@@ -65,7 +66,7 @@ namespace IngWeb.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index", new { pOspite = terapie_ospiti.ospite });
             }
-
+            
             return View(terapie_ospiti);
         }
 

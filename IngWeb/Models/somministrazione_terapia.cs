@@ -25,5 +25,6 @@ namespace IngWeb.Models
         public string nota_operatore { get; set; }
         public Nullable<int> operatore { get; set; }
         public Nullable<System.DateTime> data_ora { get; set; }
+        public string id_terapia { get; set; }
     }
 }

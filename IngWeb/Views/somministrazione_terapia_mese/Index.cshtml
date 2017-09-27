@@ -76,6 +76,8 @@
 <table class="table">
     <tr>
         <th>
+            @Html.DisplayNameFor(model => model.fascia_terapia)
+        </th><th>
             @Html.DisplayNameFor(model => model.ospite)
         </th>
         <th>
@@ -96,105 +98,88 @@
         <th>
             @Html.DisplayNameFor(model => model.stato)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.colazione)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.pranzo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.cena)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.sera)
-        </th>
+        
+        
         <th></th>
     </tr>
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.ospite)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.data_inizio)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.data_fine)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.farmaco)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.posologia)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.via_somministrazione)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.stato)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.colazione)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.pranzo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.cena)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.sera)
-            </td>
-            <td align="center">
-                <table>
-                    <tr>
-                        <td width="50px" style="border: 1px solid black; background-color:red;" align="center">01</td>
-                        <td width="50px" style="border: 1px solid black; background-color:green;" align="center">02</td>
-                        <td width="50px" style="border: 1px solid black;" align="center">03</td>
-                        <td width="50px" style="border: 1px solid black;" align="center">04</td>
-                        <td width="50px" style="border: 1px solid black;" align="center">05</td>
-                        <td width="50px" style="border: 1px solid black;" align="center">06</td>
-                        <td width="50px" style="border: 1px solid black;" align="center">07</td>
-                        <td width="50px" style="border: 1px solid black;" align="center">08</td>
-                        <td width="50px" style="border: 1px solid black;" align="center">09</td>
-                        <td width="50px" style="border: 1px solid black;" align="center">10</td>
-                        <td width="50px" style="border: 1px solid black;" align="center">11</td>
-                        <td width="50px" style="border: 1px solid black;" align="center">12</td>
-                        <td width="50px" style="border: 1px solid black;" align="center">13</td>
-                        <td width="50px" style="border: 1px solid black;" align="center">14</td>
-                        <td width="50px" style="border: 1px solid black;" align="center">15</td>
-                        <td width="50px" style="border: 1px solid black;" align="center">16</td>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.fascia_terapia)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ospite)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.data_inizio)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.data_fine)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.farmaco)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.posologia)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.via_somministrazione)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.stato)
+                </td>
+            </tr>
+            <tr>
+                <td align="center" colspan="8">
+                    <table>
+                        <tr>
+                            <td width="50px" style="border: 1px solid black; background-color:red;" align="center">01</td>
+                            <td width="50px" style="border: 1px solid black; background-color:green;" align="center">02</td>
+                            <td width="50px" style="border: 1px solid black;" align="center">03</td>
+                            <td width="50px" style="border: 1px solid black;" align="center">04</td>
+                            <td width="50px" style="border: 1px solid black;" align="center">05</td>
+                            <td width="50px" style="border: 1px solid black;" align="center">06</td>
+                            <td width="50px" style="border: 1px solid black;" align="center">07</td>
+                            <td width="50px" style="border: 1px solid black;" align="center">08</td>
+                            <td width="50px" style="border: 1px solid black;" align="center">09</td>
+                            <td width="50px" style="border: 1px solid black;" align="center">10</td>
+                            <td width="50px" style="border: 1px solid black;" align="center">11</td>
+                            <td width="50px" style="border: 1px solid black;" align="center">12</td>
+                            <td width="50px" style="border: 1px solid black;" align="center">13</td>
+                            <td width="50px" style="border: 1px solid black;" align="center">14</td>
+                            <td width="50px" style="border: 1px solid black;" align="center">15</td>
+                            <td width="50px" style="border: 1px solid black;" align="center">16</td>
 
-                    </tr>
-                    <tr>
-                        <td width="50px" style="border: 1px solid black;" align="center">17</td>
-                        <td width="50px" style="border: 1px solid black;" align="center">18</td>
-                        <td width="50px" style="border: 1px solid black;" align="center">19</td>
-                        <td width="50px" style="border: 1px solid black;" align="center">20</td>
-                        <td width="50px" style="border: 1px solid black;" align="center">21</td>
-                        <td width="50px" style="border: 1px solid black;" align="center">22</td>
-                        <td width="50px" style="border: 1px solid black;" align="center">23</td>
-                        <td width="50px" style="border: 1px solid black;" align="center">24</td>
-                        <td width="50px" style="border: 1px solid black;" align="center">25</td>
-                        <td width="50px" style="border: 1px solid black;" align="center">26</td>
-                        <td width="50px" style="border: 1px solid black;" align="center">27</td>
-                        <td width="50px" style="border: 1px solid black;" align="center">28</td>
-                        <td width="50px" style="border: 1px solid black;" align="center">29</td>
-                        <td width="50px" style="border: 1px solid black;" align="center">30</td>
-                        <td width="50px" style="border: 1px solid black;" align="center">31</td>
-                        <td width="50px" align="center"></td>
+                        </tr>
+                        <tr>
+                            <td width="50px" style="border: 1px solid black;" align="center">17</td>
+                            <td width="50px" style="border: 1px solid black;" align="center">18</td>
+                            <td width="50px" style="border: 1px solid black;" align="center">19</td>
+                            <td width="50px" style="border: 1px solid black;" align="center">20</td>
+                            <td width="50px" style="border: 1px solid black;" align="center">21</td>
+                            <td width="50px" style="border: 1px solid black;" align="center">22</td>
+                            <td width="50px" style="border: 1px solid black;" align="center">23</td>
+                            <td width="50px" style="border: 1px solid black;" align="center">24</td>
+                            <td width="50px" style="border: 1px solid black;" align="center">25</td>
+                            <td width="50px" style="border: 1px solid black;" align="center">26</td>
+                            <td width="50px" style="border: 1px solid black;" align="center">27</td>
+                            <td width="50px" style="border: 1px solid black;" align="center">28</td>
+                            <td width="50px" style="border: 1px solid black;" align="center">29</td>
+                            <td width="50px" style="border: 1px solid black;" align="center">30</td>
+                            <td width="50px" style="border: 1px solid black;" align="center">31</td>
+                            <td width="50px" align="center"></td>
 
-                    </tr>
-                </table>
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
-                @Html.ActionLink("Details", "Details", new { id = item.id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.id })
-            </td>
-        </tr>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.id })
+                </td>
+            </tr>
     }
 
 </table>

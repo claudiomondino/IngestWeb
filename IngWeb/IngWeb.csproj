@@ -203,6 +203,7 @@
     <Compile Include="Controllers\anagrafica_ospitiController.cs" />
     <Compile Include="Controllers\anagraficheController.cs" />
     <Compile Include="Controllers\Class1.cs" />
+    <Compile Include="Controllers\fasce_terapiaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ImpostazioniController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -233,6 +234,9 @@
       <DependentUpon>ModelDati.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\dieta.cs">
+      <DependentUpon>ModelDati.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fasce_terapia.cs">
       <DependentUpon>ModelDati.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
@@ -414,6 +418,11 @@
     <Content Include="Views\somministrazione_terapia_mese\Details.cshtml" />
     <Content Include="Views\somministrazione_terapia_mese\Edit.cshtml" />
     <Content Include="Views\somministrazione_terapia_mese\Index.cshtml" />
+    <Content Include="Views\fasce_terapia\Create.cshtml" />
+    <Content Include="Views\fasce_terapia\Delete.cshtml" />
+    <Content Include="Views\fasce_terapia\Details.cshtml" />
+    <Content Include="Views\fasce_terapia\Edit.cshtml" />
+    <Content Include="Views\fasce_terapia\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

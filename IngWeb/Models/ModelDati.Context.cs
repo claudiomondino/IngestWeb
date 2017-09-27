@@ -43,5 +43,6 @@ namespace IngWeb.Models
         public virtual DbSet<schede_ospiti> schede_ospiti { get; set; }
         public virtual DbSet<tipi_rilevazioni> tipi_rilevazioni { get; set; }
         public virtual DbSet<tipi_scheda_ospite> tipi_scheda_ospite { get; set; }
+        public virtual DbSet<fasce_terapia> fasce_terapia { get; set; }
     }
 }

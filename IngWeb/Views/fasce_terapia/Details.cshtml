@@ -1,0 +1,34 @@
+﻿@model IngWeb.Models.fasce_terapia
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>fasce_terapia</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ora_inizio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ora_inizio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ora_fine)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ora_fine)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.codice }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

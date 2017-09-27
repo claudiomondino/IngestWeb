@@ -23,6 +23,7 @@
         <EntityTypeShape EntityType="IngestDBModel.schede_ospiti" Width="1.5" PointX="9.375" PointY="9.75" />
         <EntityTypeShape EntityType="IngestDBModel.tipi_rilevazioni" Width="1.5" PointX="11.375" PointY="3.75" />
         <EntityTypeShape EntityType="IngestDBModel.tipi_scheda_ospite" Width="1.5" PointX="11.375" PointY="8.75" />
+        <EntityTypeShape EntityType="IngestDBModel.fasce_terapia" Width="1.5" PointX="11.375" PointY="11.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

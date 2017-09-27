@@ -28,5 +28,6 @@ namespace IngWeb.Models
         public string sera { get; set; }
         public Nullable<System.TimeSpan> ora_inizio { get; set; }
         public Nullable<System.TimeSpan> ora_fine { get; set; }
+        public string fascia_terapia { get; set; }
     }
 }

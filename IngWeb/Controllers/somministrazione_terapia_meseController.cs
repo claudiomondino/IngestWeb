@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using IngWeb.Models;
 using System.Globalization;
+using System.Windows;
 
 namespace IngWeb.Controllers
 {
@@ -32,24 +33,18 @@ namespace IngWeb.Controllers
                                        select osp.nome + " " + osp.cognome).First().ToString();
 
             var qry = (from a in db.terapie_ospiti
-                      where a.ospite == pOspite && a.colazione=="S" && 
-                      a.data_inizio <= datafine && a.data_fine >= datainizio
-                       select a).Concat
-                      (from a in db.terapie_ospiti where a.ospite== pOspite && a.pranzo == "S" &&
-                       a.data_inizio <= datafine && (a.data_fine >= datainizio || a.data_fine == null) 
-                       select a).Concat
-                      (from a in db.terapie_ospiti
-                       where a.ospite == pOspite && a.cena == "S" &&
-                        a.data_inizio <= datafine && (a.data_fine >= datainizio || a.data_fine == null)
-                       select a).Concat
-                      (from a in db.terapie_ospiti
-                       where a.ospite == pOspite && a.sera == "S" &&
-                        a.data_inizio <= datafine && (a.data_fine >= datainizio || a.data_fine == null)
-                       select a);
+                       where a.ospite == pOspite &&
+                       a.data_inizio <= datafine && (a.data_fine >= datainizio || a.data_fine == null)
+                       orderby a.fascia_terapia
+                       select a
+                       );
             return View(qry.ToList());
+
+
             //return View(db.terapie_ospiti.ToList());
         }
 
+       
         // GET: terapie_ospiti/Details/5
         public ActionResult Details(int? id)
         {
