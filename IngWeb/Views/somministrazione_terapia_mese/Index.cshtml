@@ -135,42 +135,38 @@
                 <td align="center" colspan="8">
                     <table>
                         <tr>
-                            <td width="50px" style="border: 1px solid black; background-color:red;" align="center">01</td>
-                            <td width="50px" style="border: 1px solid black; background-color:green;" align="center">02</td>
-                            <td width="50px" style="border: 1px solid black;" align="center">03</td>
-                            <td width="50px" style="border: 1px solid black;" align="center">04</td>
-                            <td width="50px" style="border: 1px solid black;" align="center">05</td>
-                            <td width="50px" style="border: 1px solid black;" align="center">06</td>
-                            <td width="50px" style="border: 1px solid black;" align="center">07</td>
-                            <td width="50px" style="border: 1px solid black;" align="center">08</td>
-                            <td width="50px" style="border: 1px solid black;" align="center">09</td>
-                            <td width="50px" style="border: 1px solid black;" align="center">10</td>
-                            <td width="50px" style="border: 1px solid black;" align="center">11</td>
-                            <td width="50px" style="border: 1px solid black;" align="center">12</td>
-                            <td width="50px" style="border: 1px solid black;" align="center">13</td>
-                            <td width="50px" style="border: 1px solid black;" align="center">14</td>
-                            <td width="50px" style="border: 1px solid black;" align="center">15</td>
-                            <td width="50px" style="border: 1px solid black;" align="center">16</td>
+                            @for (int i = 1; i < 17; i += 1)
+                            {
+                                <td align="center">
+                                    <img width="18" src="~/Content/info.png" onclick="location.href ='@Url.Action("Edit", "somministrazione_terapia", new { id = 78 })'" />
+                                </td>
+                            }
+                        </tr>
+                        <tr>
+            @for (int i = 1; i < 17; i += 1)
+            {
+                <td width="50px" onclick="location.href ='@Url.Action("CreaSomministrazione", "somministrazione_terapia_mese", new { pIdTerapia = @item.id, pGiornoSom = @i, pMeseSom = this.ViewBag.MeseScelto, pAnnoSom = this.ViewBag.AnnoScelto })'" style="border: 1px solid black; background-color:@Html.Action("GetStatoSomministrazione", "somministrazione_terapia_mese", new { pGetIdTerapia = @item.id, pGetGiornoSom = i, pGetMeseSom = this.ViewBag.MeseScelto, pGetAnnoSom = this.ViewBag.AnnoScelto });" align="center">
+                    @i<br />
+                </td>
+            }
+                        </tr>
+                       
+                        <tr>
+            @for (int i = 17; i < this.ViewBag.ultimoGiornoMese+1; i += 1)
+            {
+                <td width="50px" onclick="location.href ='@Url.Action("CreaSomministrazione", "somministrazione_terapia_mese", new { pIdTerapia = @item.id, pGiornoSom = @i, pMeseSom = this.ViewBag.MeseScelto, pAnnoSom = this.ViewBag.AnnoScelto })'" style="border: 1px solid black; background-color:@Html.Action("GetStatoSomministrazione", "somministrazione_terapia_mese", new { pGetIdTerapia = @item.id, pGetGiornoSom = i, pGetMeseSom = this.ViewBag.MeseScelto, pGetAnnoSom = this.ViewBag.AnnoScelto });" align="center">
+                   @i
+                </td>
+            }
 
                         </tr>
                         <tr>
-                            <td width="50px" style="border: 1px solid black;" align="center">17</td>
-                            <td width="50px" style="border: 1px solid black;" align="center">18</td>
-                            <td width="50px" style="border: 1px solid black;" align="center">19</td>
-                            <td width="50px" style="border: 1px solid black;" align="center">20</td>
-                            <td width="50px" style="border: 1px solid black;" align="center">21</td>
-                            <td width="50px" style="border: 1px solid black;" align="center">22</td>
-                            <td width="50px" style="border: 1px solid black;" align="center">23</td>
-                            <td width="50px" style="border: 1px solid black;" align="center">24</td>
-                            <td width="50px" style="border: 1px solid black;" align="center">25</td>
-                            <td width="50px" style="border: 1px solid black;" align="center">26</td>
-                            <td width="50px" style="border: 1px solid black;" align="center">27</td>
-                            <td width="50px" style="border: 1px solid black;" align="center">28</td>
-                            <td width="50px" style="border: 1px solid black;" align="center">29</td>
-                            <td width="50px" style="border: 1px solid black;" align="center">30</td>
-                            <td width="50px" style="border: 1px solid black;" align="center">31</td>
-                            <td width="50px" align="center"></td>
-
+                            @for (int i = 17; i < this.ViewBag.ultimoGiornoMese + 1; i += 1)
+                            {
+                                <td align="center">
+                                    <img width="18" src="~/Content/info.png" onclick="location.href ='@Url.Action("Edit", "somministrazione_terapia", new { id = 78 })'" />
+                                </td>
+                            }
                         </tr>
                     </table>
                 </td>

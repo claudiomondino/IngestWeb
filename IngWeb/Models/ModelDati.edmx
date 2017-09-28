@@ -262,6 +262,7 @@
           <Property Name="operatore" Type="int" />
           <Property Name="data_ora" Type="datetime" />
           <Property Name="id_terapia" Type="nchar" MaxLength="10" />
+          <Property Name="idterapia" Type="int" />
         </EntityType>
         <EntityType Name="terapie_ospiti">
           <Key>
@@ -601,6 +602,7 @@
           <Property Name="operatore" Type="Int32" />
           <Property Name="data_ora" Type="DateTime" Precision="3" />
           <Property Name="id_terapia" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="idterapia" Type="Int32" />
         </EntityType>
         <EntityType Name="tipi_giro">
           <Key>
@@ -916,6 +918,7 @@
           <EntitySetMapping Name="somministrazione_terapia">
             <EntityTypeMapping TypeName="IngestDBModel.somministrazione_terapia">
               <MappingFragment StoreEntitySet="somministrazione_terapia">
+                <ScalarProperty Name="idterapia" ColumnName="idterapia" />
                 <ScalarProperty Name="id_terapia" ColumnName="id_terapia" />
                 <ScalarProperty Name="data_ora" ColumnName="data_ora" />
                 <ScalarProperty Name="operatore" ColumnName="operatore" />

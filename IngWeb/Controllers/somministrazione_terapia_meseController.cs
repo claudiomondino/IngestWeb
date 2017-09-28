@@ -10,11 +10,15 @@ using IngWeb.Models;
 using System.Globalization;
 using System.Windows;
 
+
 namespace IngWeb.Controllers
 {
     public class somministrazione_terapia_meseController : Controller
     {
         private IngestDBEntities db = new IngestDBEntities();
+        private IngestDBEntities db1 = new IngestDBEntities();
+        private IngestDBEntities db2 = new IngestDBEntities();
+        private IngestDBEntities db3 = new IngestDBEntities();
 
         // GET: terapie_ospiti
         public ActionResult Index(int pOspite, string pMese, string pAnno)
@@ -26,8 +30,11 @@ namespace IngWeb.Controllers
             DateTime datainizio = new DateTime(Int32.Parse(pAnno), Int32.Parse(pMese), 1);
             DateTime datafine = new DateTime(Int32.Parse(pAnno), Int32.Parse(pMese), DateTime.DaysInMonth(Int32.Parse(pAnno), Int32.Parse(pMese)));
 
-            ViewBag.idOspite = pOspite;
+            ViewBag.ultimoGiornoMese = DateTime.DaysInMonth(Int32.Parse(pAnno), Int32.Parse(pMese));
+            if (datafine > DateTime.Now) { ViewBag.ultimoGiornoMese = DateTime.Now.Day; }
 
+            ViewBag.idOspite = pOspite;
+            
             ViewBag.NomeOspite = (from osp in db.anagrafica_ospiti
                                        where osp.id == pOspite
                                        select osp.nome + " " + osp.cognome).First().ToString();
@@ -144,6 +151,96 @@ namespace IngWeb.Controllers
             db.terapie_ospiti.Remove(terapie_ospiti);
             db.SaveChanges();
             return RedirectToAction("Index", new { pOspite = terapie_ospiti.ospite });
+        }
+
+        // GET: terapie_ospiti/Delete/5
+        public ActionResult CreaSomministrazione(int pIdTerapia, string pGiornoSom, string pMeseSom, string pAnnoSom)
+        {
+
+            DateTime datasomministrazione = new DateTime(Int32.Parse(pAnnoSom), Int32.Parse(pMeseSom), Int32.Parse(pGiornoSom));
+
+            int? ospiteTerapia = 0;
+            
+            string StatoModificato = "";
+
+            
+            somministrazione_terapia qrysomm = (from b in db3.somministrazione_terapia
+                          where b.idterapia == pIdTerapia && b.data_somministrazione == datasomministrazione
+                          select b).FirstOrDefault();
+
+            bool isNew = (qrysomm == null);
+
+            if (isNew)
+            {
+                
+            } else { 
+            
+                if (qrysomm.stato_somministrazione == "S")
+                {
+                    qrysomm.stato_somministrazione = "N";
+                    StatoModificato = "S";
+                }
+                else
+                {
+                    qrysomm.stato_somministrazione = "S";
+                    StatoModificato = "S";
+                }
+                try
+                {
+                    db3.SaveChanges();
+                }
+                catch (Exception e)
+                {
+                    StatoModificato = "";
+                }
+
+            }
+
+            var qryterap = from a in db1.terapie_ospiti
+                           where a.id == pIdTerapia
+                           select a;
+            foreach (var terap in qryterap)
+            {
+                
+                if (StatoModificato == "") { 
+                    somministrazione_terapia somter = new somministrazione_terapia();
+                    somter.ospite = terap.ospite;
+                    somter.fascia_oraria = terap.fascia_terapia;
+                    somter.data_somministrazione = datasomministrazione;
+                    somter.farmaco = terap.farmaco;
+                    somter.posologia = terap.posologia;
+                    somter.via_somministrazione = terap.via_somministrazione;
+                    somter.stato_somministrazione = "S";
+                    somter.idterapia = pIdTerapia;
+                    db2.somministrazione_terapia.Add(somter);
+                    db2.SaveChanges();
+                }
+                ospiteTerapia = terap.ospite;
+            }
+            return RedirectToAction("Index", new { pOspite = ospiteTerapia, pMese = pMeseSom, pAnno = pAnnoSom });
+        }
+
+        // GET: terapie_ospiti/Delete/5
+        public ActionResult GetStatoSomministrazione(int pGetIdTerapia, string pGetGiornoSom, string pGetMeseSom, string pGetAnnoSom)
+        {
+            DateTime datasomministrazione = new DateTime(Int32.Parse(pGetAnnoSom), Int32.Parse(pGetMeseSom), Int32.Parse(pGetGiornoSom));
+            string StatoSommTerapia = "";
+            var qrysommterap = from a in db.somministrazione_terapia
+                           where a.idterapia == pGetIdTerapia && a.data_somministrazione==datasomministrazione
+                           select a;
+            foreach (var sommterap in qrysommterap)
+            {
+                StatoSommTerapia = sommterap.stato_somministrazione;
+            }
+            string colore = "white";
+
+            if (StatoSommTerapia == "S")
+            { colore = "green"; }
+            
+            if (StatoSommTerapia == "N")
+            { colore = "red"; }
+            
+            return Content(colore);
         }
 
         protected override void Dispose(bool disposing)
